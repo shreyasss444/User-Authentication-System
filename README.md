@@ -76,9 +76,6 @@ User Authentication System/
 ├── venv/
 └── README.md
 
-yaml
-Copy code
-
 ---
 
 ## ⚙️ Setup Instructions
