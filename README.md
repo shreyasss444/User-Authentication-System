@@ -51,7 +51,7 @@ The project includes email verification, password reset, role-based access contr
 ## 📁 Project Structure
 
 User Authentication System/
-│
+|
 ├── app.py
 ├── models.py
 ├── utils.py
