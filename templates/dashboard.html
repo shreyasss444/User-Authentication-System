@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Dashboard</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+
+<nav class="navbar navbar-dark bg-dark px-3">
+    <span class="navbar-brand">User Dashboard</span>
+    <a href="/logout" class="btn btn-danger">Logout</a>
+</nav>
+
+<div class="dashboard">
+    <h4>Welcome 👋</h4>
+    <p>You are logged in successfully.</p>
+
+    {% if current_user.role == "admin" %}
+    <a href="/admin">Admin Panel</a><br>
+    {% endif %}
+
+    <a href="/logout" style="background:#ef4444;">Logout</a>
+</div>
+
+</body>
+</html>

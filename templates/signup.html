@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Signup</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+    <script src="{{ url_for('static', filename='password.js') }}" defer></script>
+</head>
+<body class="bg-light">
+
+<script src="{{ url_for('static', filename='password.js') }}" defer></script>
+<script src="{{ url_for('static', filename='theme.js') }}" defer></script>
+<script src="{{ url_for('static', filename='show_password.js') }}"></script>
+
+<div class="theme-toggle" id="themeToggle">🌙</div>
+
+<div class="auth-card">
+    <h3>Create Account</h3>
+
+    {% with messages = get_flashed_messages() %}
+      {% if messages %}
+        <div class="alert alert-danger">{{ messages[0] }}</div>
+      {% endif %}
+    {% endwith %}
+
+    <form method="POST">
+        <input type="email" name="email" placeholder="Email" required>
+
+        <div style="position:relative">
+            <input type="password" id="password" name="password" placeholder="Password" required>
+            <span style="position:absolute;right:12px;top:10px;cursor:pointer"
+                  onclick="togglePassword('password', this)">👁️</span>
+        </div>
+
+        <div style="position:relative">
+            <input type="password" id="confirm" placeholder="Confirm Password" required>
+            <span style="position:absolute;right:12px;top:10px;cursor:pointer"
+                  onclick="togglePassword('confirm', this)">👁️</span>
+        </div>
+
+        <small id="strength"></small>
+
+        <button>Signup</button>
+    </form>
+
+    <div class="auth-links">
+        <a href="/login">Already have an account?</a>
+    </div>
+</div>
+
+
+</body>
+</html>
